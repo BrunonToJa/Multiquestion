@@ -11,7 +11,7 @@ class QuizSeeder extends Seeder
     {
         $quiz = Quiz::create([
             'title' => 'Podstawy PHP',
-            'description' => 'Krótki quiz sprawdzający podstawy języka.',
+            'description' => 'PHP teścik',
         ]);
 
         $data = [

@@ -19,6 +19,7 @@ class QuizController extends Controller
         return view('quizzes.create');
     }
 
+    // Czy git dane
     public function store(Request $request)
     {
         $data = $request->validate([
@@ -37,11 +38,10 @@ class QuizController extends Controller
 
         return view('quizzes.show', ['quiz' => $quiz]);
     }
-
+        // Sprawdzanie czy jest odpowiedź i czy dobra
     public function submit(Request $request, Quiz $quiz)
     {
         $quiz->load('questions.answers');
-
         $rules = [];
         foreach ($quiz->questions as $question) {
             $rules["answers.{$question->id}"] = [

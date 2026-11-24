@@ -17,7 +17,7 @@ class QuestionController extends Controller
         ]);
 
         $question = $quiz->questions()->create(['content' => $data['content']]);
-
+        //tutaj wybieramy dobrą
         foreach ($data['options'] as $index => $text) {
             $question->answers()->create([
                 'content' => $text,
